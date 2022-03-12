@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+<meta charset=UTF-8 />
+<meta http-equiv=X-UA-Compatible content="IE=edge" />
+<meta name=viewport content="width=device-width, initial-scale=1.0" />
+<link rel=stylesheet href=https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css />
+<link rel=stylesheet href=style.css />
+<link rel="shortcut icon" href=favicon.png type=image/x-icon />
+<title>Music Player</title>
+</head>
+<body>
+<header id=header>
+<div id=outer-circle-container>
+<div id=outer-circle class=outer-circle></div>
+<div id=app-logo-container>
+<img src=favicon.png alt=logo>
+</div>
+</div>
+<div id=loading-container>
+<div id=loading-background></div>
+<div id=loading>Loading...</div>
+</div>
+</header>
+<div id=info-container>
+<div id=u-container>
+<div class=form-logo>
+<img src=favicon.png alt=logo><strong>Music</strong>
+</div>
+<div id=form-container>
+<div id=u-heading>Let's Get Started</div>
+<div id=u-title>Your one stop music platform.</div>
+<label id=u-label for=username>Enter Username : </label>
+<input type=text name=username id=username placeholder="Your Name..." max=10 title="Please enter your name" />
+<div id=next-button class=disabled-link>
+Next <i class="fad fa-chevron-double-right"></i>
+</div>
+</div>
+</div>
+<div id=m-container>
+<div class=form-logo>
+<img src=favicon.png alt=logo><strong>Music</strong>
+</div>
+<div id=m-sub-container>
+<div id=greeting-section>Hello <span>user</span></div>
+<div id=sel-heading>Explore By Category </div>
+<div id=category-section>
+<input class=sel-song type=checkbox name=english id=english />
+<label class=sel-label for=english>
+<div>
+<img src=images/artist/english/justin.webp alt=English />
+</div>
+<div class=sel-label-name>English</div>
+</label>
+<input class=sel-song type=checkbox name=hindi id=hindi />
+<label class=sel-label for=hindi>
+<div>
+<img src="images/artist/hindi/arijit singh.webp" alt=Hindi />
+</div>
+<div class=sel-label-name>Hindi</div>
+</label>
+<input class=sel-song type=checkbox name=punjabi id=punjabi />
+<label class=sel-label for=punjabi>
+<div>
+<img src="images/artist/punjabi/diljit dosanjh.webp" alt=Punjabi />
+</div>
+<div class=sel-label-name>Punjabi</div>
+</label>
+<input class=sel-song type=checkbox name=hariyanvi id=hariyanvi />
+<label class=sel-label for=hariyanvi>
+<div>
+<img src=images/artist/haryanvi/fazilpuria.webp alt=Hariyanvi />
+</div>
+<div class=sel-label-name>Hariyanvi</div>
+</label>
+</div>
+<div id=m-warning>In order to proceed you must select atleast one category.</div>
+<div class=scale id=save-button>Save <i class="fas fa-badge-check"></i></div>
+</div>
+</div>
+</div>
+<nav id=navbar>
+<div id=n-left>
+<img src=favicon.png alt=logo>
+<div>Musify</div>
+</div>
+<div id=n-center>
+<div class="navbar-links navlink-active">
+<div>
+<i class="fad fa-home-lg-alt n-icon"></i>
+</div>
+<div class=n-text>Home</div>
+</div>
+<div class=navbar-links>
+<div>
+<i class="fa-solid fa-compact-disc n-icon"></i>
+</div>
+<div class=n-text>player</div>
+</div>
+<div class=navbar-links>
+<div>
+<i class="far fa-search n-icon"></i>
+</div>
+<div class=n-text>Search</div>
+</div>
+<div class=navbar-links>
+<div>
+<i class="fad fa-user n-icon"></i>
+</div>
+<div class=n-text>Me</div>
+</div>
+</div>
+<div id=n-right>
+<i class="fas fa-ellipsis-v"></i>
+<div id=nav-dropdown>
+<div class=drop-item>full screen mode</div>
+<div class=drop-item>gym mode</div>
+<div class=drop-item>coding mode</div>
+<div class=drop-item><i class="fa-solid fa-circle-info"></i> v22</div>
+</div>
+</div>
+</nav>
+<main>
+<div id=home>
+<div id=recent-container>
+<div class=home-heading>recent songs</div>
+<div class=sub-container></div>
+</div>
+<div class=song-container>
+<div class=home-heading>english songs</div>
+<div class=sub-container></div>
+</div>
+<div class=song-container>
+<div class=home-heading>hindi songs</div>
+<div class=sub-container></div>
+</div>
+<div class=song-container>
+<div class=home-heading>punjabi songs</div>
+<div class=sub-container></div>
+</div>
+<div class=song-container>
+<div class=home-heading>haryanvi songs</div>
+<div class=sub-container></div>
+</div>
+</div>
+<div id=search-container>
+<div id=search-header>
+<div id=close-search>
+<i class="fa-solid fa-angle-down"></i>
+</div>
+<div id=search-box>
+<input type=text placeholder="Search here..." name=search-song id=search-song>
+<div id=clear-text>
+<label for=search-song>
+<i class="fa-solid fa-xmark"></i>
+</label>
+</div>
+</div>
+</div>
+<div id=show-result>
+</div>
+<div id=close-searh-container></div>
+</div>
+<div id=me-container>
+<div id=me-top>
+<div>
+<div id=me-img>
+<img src=user.svg alt="my image">
+</div>
+<div id=me-name>null</div>
+</div>
+</div>
+<div id=me-body>
+<div id=me-fav-container>
+<div class=me-title>favourite songs</div>
+<div id=fav-list></div>
+</div>
+<div id=mood-mix>
+<div class=me-title>mood mix songs</div>
+<div id=mood-mix-container>
+<div class=mood-mix-item>
+<div>
+<img src=images/gym.jpg alt="gym songs" class=mood-img>
+</div>
+<div class=mood-title>gym songs</div>
+</div>
+<div class=mood-mix-item>
+<div>
+<img src=images/coding.png alt="coding songs" class=mood-img>
+</div>
+<div class=mood-title>coding songs</div>
+</div>
+</div>
+</div>
+<div id=categories-container>
+<div class=me-title>change song categories</div>
+<div id=categories>
+<input type=checkbox name=English id=English class=updt-categories>
+<label for=English class=categories>
+<div>
+<img class=categories-image src="images/artist/english/alan walker.webp" alt=categories>
+</div>
+<div>english</div>
+</label>
+<input type=checkbox name=Hindi id=Hindi class=updt-categories>
+<label for=Hindi class=categories>
+<div>
+<img class=categories-image src="images/artist/hindi/arijit singh.webp" alt=hindi>
+</div>
+<div>hindi</div>
+</label>
+<input type=checkbox name=Punjabi id=Punjabi class=updt-categories>
+<label for=Punjabi class=categories>
+<div>
+<img class=categories-image src="images/artist/punjabi/diljit dosanjh.webp" alt=punjabi>
+</div>
+<div>punjabi</div>
+</label>
+<input type=checkbox name=Hariyanvi id=Hariyanvi class=updt-categories>
+<label for=Hariyanvi class=categories>
+<div>
+<img class=categories-image src=images/artist/haryanvi/fazilpuria.webp alt=haryanvi>
+</div>
+<div>haryanvi</div>
+</label>
+</div>
+<div id=save-changes class=disabled-link>save changes</div>
+</div>
+<hr id=me-hr>
+<div id=delete-account>delete account</div>
+<div id=delete-account-container>
+<div id=delete-account-pop-up>
+<div id=delete-warning>sure you want to delete your account permanently?</div>
+<div>
+<div class=delete-btn id=btn-cancel>cancel</div>
+<div class=delete-btn id=btn-delete>delete</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div id=artist-song-container class=hide-player-container>
+<div id=artist-navbar>
+<div id=close-artist>
+<i class="fas fa-chevron-down"></i>
+</div>
+<div id=artist-logo>
+<img src=favicon.png alt=favicon>
+<div>musify</div>
+</div>
+</div>
+<div id=artist-body>
+<div id=artist-header>
+<div id=artist-name>arijit singh</div>
+<img id=artist-image src=images/coding.png alt="artist image">
+</div>
+<div id=artist-sub-heading>musics</div>
+<div id=artist-songs-list-container>
+</div>
+</div>
+</div>
+<div id=player-container class=hide-player-container>
+<i id=close-player-container class="fas fa-chevron-down"></i>
+<div id=player-artist-name>Artist Name </div>
+<div>
+<img id=player-image src=images/artist/english/sunflower.webp alt="song image">
+</div>
+<div id=current-playing>Currently Playing</div>
+<div id=player-song-name>Song Name</div>
+<div id=player-icon-container>
+<i id=toggle-fav-song class="far fa-heart"></i>
+<a class="fas fa-download" href id=download-song download></a>
+<i id=play-mode class="fa-solid fa-arrows-repeat"></i>
+</div>
+<div id=progress-container>
+<div id=left-timer>00:00</div>
+<div>
+<input type=range name=progress id=progress value=0>
+</div>
+<div id=right-timer>00:00</div>
+</div>
+<div id=main-controls>
+<i id=backward-button class="fas fa-step-backward"></i>
+<i id=playPauseButton class="fas fa-play-circle"></i>
+<i id=forward-button class="fas fa-step-forward"></i>
+</div>
+<div id=next-song-indication>Upcoming Song : <span>undefined</span></div>
+</div>
+<audio src id=myAudio></audio>
+</body>
+<script src=main.js></script>
+</html>
